@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import API from '../services/api';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -25,7 +25,8 @@ function Login() {
   return (
     <div className="flex items-center justify-center h-screen bg-gray-100">
       <div className="w-full max-w-md p-8 space-y-6 bg-white rounded shadow-md">
-        <h2 className="text-2xl font-bold text-center">Login to Blogify</h2>
+        <h2 className="text-2xl font-bold text-center text-blue-600">Login to Blogify</h2>
+        <p className='text-center font-medium'>Log in to continue sharing and exploring amazing stories.</p>
         {error && <p className="text-red-600 text-sm">{error}</p>}
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
@@ -38,6 +39,7 @@ function Login() {
           </div>
           <button type="submit" className="w-full px-4 py-2 text-white bg-blue-600 rounded hover:bg-blue-700">Login</button>
         </form>
+        <p>Don't have an account? <Link to='/register' className='text-[#0000FF]'>Register here</Link></p>
       </div>
     </div>
   );

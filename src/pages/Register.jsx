@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import API from '../services/api';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Register() {
 
@@ -25,7 +25,8 @@ function Register() {
   return (
     <div className="flex items-center justify-center h-screen bg-gray-100">
       <div className="w-full max-w-md p-8 space-y-6 bg-white rounded shadow-md">
-        <h2 className="text-2xl font-bold text-center">Create a Blogify Account</h2>
+        <h2 className="text-2xl font-bold text-center text-blue-600">Create a Blogify Account</h2>
+        <p className='text-center font-medium'>Join Blogify and start sharing your stories with the world.</p>
         {error && <p className="text-red-600 text-sm">{error}</p>}
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
@@ -40,8 +41,9 @@ function Register() {
             <label className="block mb-1 text-sm font-medium">Password</label>
             <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" className="w-full px-3 py-2 border rounded outline-none focus:ring-2 focus:ring-blue-500" />
           </div>
-          <button type="submit" className="w-full px-4 py-2 text-white bg-green-600 rounded hover:bg-green-700">Register</button>
+          <button type="submit" className="w-full px-4 py-2 text-white bg-blue-600 rounded hover:bg-blue-700">Register</button>
         </form>
+        <p>Already have an account? <Link to='/login' className='text-[#0000FF]'>Login here</Link></p>
       </div>
     </div>
   );
