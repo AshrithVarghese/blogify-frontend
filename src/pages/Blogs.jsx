@@ -1,4 +1,4 @@
-import { Share2, Heart } from 'lucide-react';
+import { Share2, Heart, Copy } from 'lucide-react';
 
 const blogs = [
   {
@@ -43,8 +43,9 @@ function BlogList() {
                 Read More
               </button>
               <div className='flex items-center gap-5'>
-                <Share2 />
-                <Heart />
+                <Copy className='cursor-pointer' />
+                <Share2 className='cursor-pointer' />
+                <Heart className='cursor-pointer' />
               </div>
             </div>
           </div>
