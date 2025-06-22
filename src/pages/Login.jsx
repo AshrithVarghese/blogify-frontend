@@ -25,7 +25,7 @@ function Login() {
   return (
     <div className="flex items-center justify-center h-auto bg-gray-100">
       <div className="w-full max-w-md p-8 space-y-6 bg-white rounded shadow-md mt-[15vh] mb-[20vh]">
-        <img src="/src/assets/Computer login-rafiki.svg" alt="" className='mb-0' />
+        <img src="images/Computer login-rafiki.svg" alt="" className='mb-0' />
         <h2 className="text-2xl font-bold text-center text-blue-600">Login to Blogify</h2>
         <p className='text-center font-medium'>Log in to continue sharing and exploring amazing stories.</p>
         {error && <p className="text-red-600 text-sm">{error}</p>}
