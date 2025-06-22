@@ -10,7 +10,7 @@ function Home() {
         <img src="./src/assets/undraw_blog-post_f68f.svg" alt="" className="absolute w-[200px] left-[22vw] top-[15vh] sm:right-[20vw] z-1 md:left-[15vw] md:top-[40vh] md:w-[300px]" />
         <img src="./src/assets/undraw_publish-post_7g2z.svg" alt="" className="absolute w-[200px] left-[15vw] bottom-[-400px] z-1 md:top-[40vh] md:left-[67vw] md:w-[300px]" />
       </div> */}
-      <Link to="/register"><button className='bg-blue-600 text-white font-bold mt-[50px] mb-[100px] w-auto p-[20px] z-2 h-[40px] text-xl rounded-[5px] flex justify-center items-center cursor-pointer p-[10px] hover:text-blue-600 hover:bg-white hover:border hover:border-blue-600  transition-all duration-[500ms]'>Get Started</button></Link>
+      <Link to="/register"><button className='bg-blue-600 text-white font-bold mt-[50px] mb-[100px] w-auto p-[20px] z-2 h-[40px] text-xl rounded-[5px] flex justify-center items-center cursor-pointer hover:text-blue-600 hover:bg-white hover:border hover:border-blue-600  transition-all duration-[500ms]'>Get Started</button></Link>
     </div>
   )
 }

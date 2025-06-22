@@ -15,8 +15,8 @@ function Navbar() {
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-8 text-lg font-medium">
           <Link to="/">Home</Link>
-          <Link to="/">Blogs</Link>
-          <Link to="/">About</Link>
+          <Link to="/blogs">Blogs</Link>
+          <Link to="/about">About</Link>
           <a href="https://github.com/AshrithVarghese/blogify-frontend" target="_blank">GitHub</a>
         </div>
 
@@ -52,8 +52,8 @@ function Navbar() {
       >
         <div className="flex text-center flex-col gap-4 px-4 pb-4 text-lg font-medium w-full">
           <Link to="/" onClick={toggleMenu}>Home</Link>
-          <Link to="/" onClick={toggleMenu}>Blogs</Link>
-          <Link to="/" onClick={toggleMenu}>About</Link>
+          <Link to="/blogs" onClick={toggleMenu}>Blogs</Link>
+          <Link to="/about" onClick={toggleMenu}>About</Link>
           <a href="https://github.com/AshrithVarghese/blogify-frontend" target="_blank" onClick={toggleMenu}>GitHub</a>
           <Link to="/login" onClick={toggleMenu}>
             <button className="bg-blue-600 text-white w-full h-[40px] text-xl rounded-[5px] hover:text-[#0F172A] hover:bg-white hover:border hover:border-[#0F172A] transition-all duration-500">
