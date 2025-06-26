@@ -4,6 +4,9 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import Navbar from './components/Navbar'
 import Blogs from './pages/Blogs'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function App() {
   return (
@@ -15,6 +18,7 @@ function App() {
         <Route path='/register' element={<Register/>} />
         <Route path='/blogs' element={<Blogs/>} />
       </Routes>
+      <ToastContainer position="top-right" autoClose={5000} />
     </div>
   )
 }

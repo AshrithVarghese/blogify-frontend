@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, LogOut } from 'lucide-react';
+import { Menu, X, LogOut, UserRound } from 'lucide-react';
 import { Link, useLocation} from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,6 +18,7 @@ function Navbar() {
   const handleLogout = () => {
     localStorage.removeItem('token');
     setIsLoggedIn(false);
+    toast.success('Logout successful!');
   }
 
 
@@ -47,12 +49,12 @@ function Navbar() {
         { isLoggedIn ? (
           <div className="hidden md:flex items-center gap-3 text-lg font-medium">
             <Link to="/profile">
-              <button className="bg-blue-600 text-white w-[100px] h-[40px] text-xl rounded-[5px] hover:text-[#0F172A] hover:bg-white hover:border hover:border-[#0F172A] transition-all duration-500">
-                Profile
+              <button className="bg-blue-300 text-white w-auto h-auto p-2 flex items-center text-xl rounded-3xl hover:text-[#0F172A] transition-all duration-300 hover:after:content-['Profile'] after:text-xs">
+                <UserRound />
               </button>
             </Link>
             <Link to="/" onClick={handleLogout}>
-              <button className="bg-white text-red-600 w-auto h-[40px] text-xl rounded-[5px] hover:text-black transition-all duration-500 flex items-center">
+              <button className="bg-blue-300 text-white w-auto h-auto p-2 text-xl rounded-3xl hover:text-[#0F172A] transition-all duration-300 flex items-center hover:after:content-['LogOut'] after:text-xs">
                 <LogOut />
               </button>
             </Link>
