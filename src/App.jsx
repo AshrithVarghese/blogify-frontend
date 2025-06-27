@@ -8,7 +8,7 @@ import PostDetails from './pages/PostDetails'
 import WriteBlog from './pages/WriteBlog'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Profile from './pages/profile'
+import Profile from './pages/Profile'
 import NotFound from './pages/NotFound'
 
 
