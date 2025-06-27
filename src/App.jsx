@@ -8,8 +8,9 @@ import PostDetails from './pages/PostDetails'
 import WriteBlog from './pages/WriteBlog'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Profile from './pages/Profile'
+import Profile from './pages/Profile.jsx'
 import NotFound from './pages/NotFound'
+import About from './pages/About.jsx'
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         <Route path="/posts/:id" element={<PostDetails />} />
         <Route path="/writeblog" element={<WriteBlog />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/about" element={<About />} />
 
         {/* This should be always LAST */}
         <Route path="*" element={<NotFound />} />
