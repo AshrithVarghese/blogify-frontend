@@ -51,7 +51,7 @@ function BlogList() {
 
   if(loading) return (
      <div className='flex flex-col items-center justify-center mt-50'>
-      <img src="/images/Firmware-rafiki.svg" alt="" className="w-2xs"/>
+      <img src="/images/loading.svg" alt="" className="w-20"/>
     </div>
   );
 

@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import API from '../services/api.js';
 import { toast } from 'react-toastify';
+import { Link } from 'react-router-dom';
 
 function PostDetails() {
   const { id } = useParams();
@@ -15,7 +16,7 @@ function PostDetails() {
         setPost(response.data);
         setLoading(false);
       } catch (error) {
-        toast.error('Failed to fetch post. Check your network connection or try again later.');
+        toast.error(error.message || 'Failed to fetch post. Please try again later.');
         setLoading(false);
       }
     };
@@ -25,12 +26,21 @@ function PostDetails() {
 
   if (loading) return (
      <div className='flex flex-col items-center justify-center mt-50'>
-      <img src="/images/Firmware-rafiki.svg" alt="" className="w-3xs"/>
+      <img src="/images/loading.svg" alt="" className="w-20"/>
     </div>
   );
   if (!post) return (
-     <div className='flex flex-col items-center justify-center mt-50'>
-      <img src="/images/404 Error with a cute animal-bro.svg" alt="" className="w-3xs"/>
+     <div className="flex flex-col items-center justify-center min-h-screen bg-white text-center p-6">
+      <img src="/images/caveman.gif" alt="404" className="w-150 mb-0 mt-3" />
+      <h1 className="text-5xl font-bold text-blue-600 mb-2">404</h1>
+      <h1 className="text-3xl font-bold text-blue-600 mb-2">Page Not Found</h1>
+      <p className="text-gray-600 mb-6">Sorry, we couldn't find the blog you were looking for.</p>
+      <p className="text-gray-600 mb-6">What about reading another blog?</p>
+      <Link to="/blogs">
+        <button className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
+          Go To Blogs
+        </button>
+      </Link>
     </div>
   );
 

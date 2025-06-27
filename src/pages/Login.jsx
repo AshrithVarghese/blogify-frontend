@@ -20,7 +20,9 @@ function Login() {
     try {
       const res = await API.post('/api/user/login', { email, password });
       const token = res.data.token;
+      const userId = res.data.user._id;
       localStorage.setItem('token', token);
+      localStorage.setItem('userId', userId);
       toast.success('Login successful!');
       navigate('/blogs');
     } catch (err) {
