@@ -15,7 +15,7 @@ function PostDetails() {
         setPost(response.data);
         setLoading(false);
       } catch (error) {
-        toast.error('Failed to fetch post. Please try again later.');
+        toast.error('Failed to fetch post. Check your network connection or try again later.');
         setLoading(false);
       }
     };
@@ -35,10 +35,11 @@ function PostDetails() {
   );
 
   return (
-    <div className="p-6 max-w-3xl mx-auto mt-30 bg-white rounded-lg shadow-md">
+    <div className="p-6 max-w-3xl mx-auto mt-30 bg-white rounded-lg shadow-md mb-10">
       <h1 className="text-3xl font-bold mb-2">{post.post.title}</h1>
       <p className="text-sm text-gray-500 mb-6">By {post.post.author.name} on {new Date(post.post.createdAt).toLocaleDateString()}</p>
       <div className="text-lg text-gray-800 whitespace-pre-line">{post.post.content}</div>
+      <p className='text-xs text-blue-600 text-center mt-10'>Created on Blogify</p>
     </div>
   );
 }

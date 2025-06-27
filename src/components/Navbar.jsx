@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, LogOut, UserRound } from 'lucide-react';
+import { Menu, X, LogOut, UserRound, PenLine } from 'lucide-react';
 import { Link, useLocation} from 'react-router-dom';
 import { toast } from 'react-toastify';
 
@@ -48,13 +48,18 @@ function Navbar() {
         {/* Desktop Buttons */}
         { isLoggedIn ? (
           <div className="hidden md:flex items-center gap-3 text-lg font-medium">
+            <Link to="/writeblog">
+              <button className="bg-blue-300 text-white w-auto h-auto p-2 flex items-center text-xl rounded-3xl hover:text-[#0F172A] transition-all duration-300 hover:after:content-['_Write_a_Blog'] after:text-xs">
+                <PenLine />
+              </button>
+            </Link>
             <Link to="/profile">
-              <button className="bg-blue-300 text-white w-auto h-auto p-2 flex items-center text-xl rounded-3xl hover:text-[#0F172A] transition-all duration-300 hover:after:content-['Profile'] after:text-xs">
+              <button className="bg-blue-300 text-white w-auto h-auto p-2 flex items-center text-xl rounded-3xl hover:text-[#0F172A] transition-all duration-300 hover:after:content-['_Profile'] after:text-xs">
                 <UserRound />
               </button>
             </Link>
             <Link to="/" onClick={handleLogout}>
-              <button className="bg-blue-300 text-white w-auto h-auto p-2 text-xl rounded-3xl hover:text-[#0F172A] transition-all duration-300 flex items-center hover:after:content-['LogOut'] after:text-xs">
+              <button className="bg-blue-300 text-white w-auto h-auto p-2 text-xl rounded-3xl hover:text-[#0F172A] transition-all duration-300 flex items-center hover:after:content-['_LogOut'] after:text-xs">
                 <LogOut />
               </button>
             </Link>
@@ -88,6 +93,11 @@ function Navbar() {
           <a href="https://github.com/AshrithVarghese/blogify-frontend" target="_blank" onClick={toggleMenu}>GitHub</a>
           { isLoggedIn ? (
             <div>
+              <Link to="/writeblog">
+              <button className="bg-blue-600 text-white w-full h-[40px] text-xl rounded-[5px] mb-2 hover:text-[#0F172A] hover:bg-white hover:border hover:border-[#0F172A] transition-all duration-500">
+                Write a Blog
+              </button>
+            </Link>
               <Link to="/profile" onClick={toggleMenu}>
                 <button className="bg-blue-600 text-white w-full h-[40px] text-xl rounded-[5px] mb-2 hover:text-[#0F172A] hover:bg-white hover:border hover:border-[#0F172A] transition-all duration-500">
                   Profile

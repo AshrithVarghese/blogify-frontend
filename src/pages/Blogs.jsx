@@ -13,6 +13,7 @@ function BlogList() {
       try {
         await navigator.share({
           title: 'Check out this blog on Blogify!',
+          text: 'Check out this blog on Blogify!',
           url,
         });
       } catch (err) {
@@ -40,7 +41,7 @@ function BlogList() {
         setLoading(false);
         
       } catch (error) {
-        toast.error('Failed to fetch blogs. Please try again later.');
+        toast.error('Failed to fetch blogs. Please check your network connection or try again later.');
         setLoading(false);
       }
     };
@@ -83,7 +84,7 @@ function BlogList() {
                 </Link>
                 <div className='flex items-center gap-5'>
                   <Share2 className='cursor-pointer' onClick={() => handleShare(post._id)}/>
-                  <Heart className='cursor-pointer' />
+                  {/* <Heart className='cursor-pointer' /> */}
                 </div>
               </div>
             </div>
